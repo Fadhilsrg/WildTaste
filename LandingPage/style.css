@@ -333,6 +333,7 @@ button {
   touch-action: manipulation;
   width: 100%;
   will-change: transform;
+  transition: all .3s ease-in-out;
 }
 
 .btn:disabled {
@@ -340,7 +341,7 @@ button {
 }
 
 .btn:hover {
-  color: #000000;
+  color: var(--color1);
   background-color: var(--color4);
   box-shadow: rgba(255, 255, 255, 0.25) 0 8px 15px;
   transform: scale(105%);
@@ -395,7 +396,7 @@ button {
 
 .menu-bar .nav-link:hover,
 .dropdown-link:hover {
-  color: var(--color2);
+  color: var(--color3);
 }
 
 .nav-start,
