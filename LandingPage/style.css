@@ -3,7 +3,7 @@
 
 :root {
   --color1: #000000;
-  --color2: #494c53;
+  --color2: #252525;
   --color3: #b2b2b2;
   --color4: #ffffff;
   --ff-primary: "DM Serif Text", serif;
@@ -14,6 +14,8 @@
 body {
   background-color: black;
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  color: var(--color4);
 }
 
 *,
@@ -274,7 +276,12 @@ p {
   animation-name: moveUp;
 }
 
-/* MULAII */
+/* MULAI */
+/* navbar */
+#nav-menu{
+  width: 100vw;
+  position: absolute
+}
 
 ul {
   list-style: none;
@@ -297,27 +304,63 @@ button {
 }
 
 .btn {
-  display: block;
-  background-color: var(--color2);
-  color: var(--white);
-  text-align: center;
-  padding: 0.6rem 1.4rem;
+  display: flex;
+  align-items:center ;
+  justify-content: center;
+  gap: 4px;
+  flex-direction: row;
+  appearance: none;
+  background-color: transparent;
+  border: 2px solid var(--color4);
+  border-image: linear-gradient(to left, var(--color2),var(--color4));
+  border-image-slice: 1;
+  border-radius: 0;
+  box-sizing: border-box;
+  color: var(--color4);
+  cursor: pointer;
+  font-family: var(--ff-secondary);
   font-size: 1rem;
-  font-weight: 500;
-  border-radius: 5px;
+  line-height: normal;
+  min-height: 30px;
+  min-width: 0;
+  outline: none;
+  padding: 8px 12px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 100%;
+  will-change: transform;
+}
+
+.btn:disabled {
+  pointer-events: none;
+}
+
+.btn:hover {
+  color: #000000;
+  background-color: var(--color4);
+  box-shadow: rgba(255, 255, 255, 0.25) 0 8px 15px;
+  transform: scale(105%);
+}
+
+.btn:active {
+  box-shadow: none;
+  transform: translateY(0);
 }
 
 .icon {
   padding: 0.5rem;
   background-color: var(--color2);
-  border-radius: 10px;
 }
 
 .logo {
   margin-right: 1.5rem;
 }
 
-.container {
+.containerNav {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -325,7 +368,7 @@ button {
   margin: 0 auto;
   column-gap: 2rem;
   height: 90px;
-  padding: 0.8rem 6rem;
+  padding: 0.8rem 4rem;
 }
 
 .menu {
@@ -352,7 +395,7 @@ button {
 
 .menu-bar .nav-link:hover,
 .dropdown-link:hover {
-  color: var(--color3);
+  color: var(--color2);
 }
 
 .nav-start,
@@ -362,6 +405,15 @@ button {
 .right-container .search {
   display: flex;
   align-items: center;
+}
+
+.nav-start,
+.nav-end{
+  width: 200px;
+}
+
+.nav-end{
+  justify-content: end;
 }
 
 .dropdown {
@@ -429,7 +481,70 @@ button {
   font-size: 1.9rem;
 }
 
-@media (max-width: 768px) {
+/* Home */
+.containerHome{
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  padding: 0 64px;
+  padding-top: 90px;
+  overflow: hidden;
+}
+
+.containerIsi{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 45%;
+  gap: 2rem;
+  padding: 0 50px;
+}
+
+.containerIsiText{
+  width: 100%;
+  text-align: left;
+}
+
+.containerIsiText h1{
+  font-size: 6rem;
+}
+
+.containerIsiText h2{
+  font-size: 4rem;
+}
+
+.containerIsi p{
+  font-size: 1.6rem;
+}
+
+.containerIsiData{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.data{
+  text-align: center;
+  width: 30%;
+}
+
+.containerFotoHome{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 55%;
+}
+
+.containerFotoHome img{
+  width: 95%;
+}
+
+
+@media (max-width: 830px) {
   #hamburger {
     background-color: transparent;
     border: none;
@@ -472,7 +587,7 @@ button {
     stroke-width: 6;
   }
 
-  .container {
+  .containerNav {
     padding: 1.2rem;
   }
 
