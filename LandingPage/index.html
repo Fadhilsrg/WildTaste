@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header id="nav-menu" aria-label="navigation bar">
+      <div class="container">
+        <div class="nav-start">
+          <a class="logo" href="/">
+            <img
+              src="img/logo.png"
+              width="100"
+              height="75"
+              alt="Logo"
+            />
+          </a>
+        </div>
+        <nav class="menu">
+          <ul class="menu-bar">
+            <li>
+              <button
+                class="nav-link dropdown-btn"
+                data-dropdown="dropdown1"
+                aria-haspopup="true"
+                aria-expanded="false"
+                aria-label="browse"
+              >
+                Home
+              </button>
+            </li>
+            <li><a class="nav-link" href="/">Store</a></li>
+            <li>
+              <button
+                class="nav-link dropdown-btn"
+                data-dropdown="dropdown2"
+                aria-haspopup="true"
+                aria-expanded="false"
+                aria-label="discover"
+              >
+                Discover
+                <i class="bx bx-chevron-down" aria-hidden="true"></i>
+              </button>
+              <div id="dropdown2" class="dropdown">
+                <ul role="menu">
+                  <li role="menuitem">
+                    <a class="dropdown-link" href="#Dog">Dog</a>
+                  </li>
+                  <li role="menuitem">
+                    <a class="dropdown-link" href="#Cat">Cat</a>
+                  </li>
+                  <li role="menuitem">
+                    <a class="dropdown-link" href="#Fish">Fish</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li><a class="nav-link" href="/">About</a></li>
+          </ul>
+        </nav>
+        <div class="nav-end">
+          <div class="right-container">
+            <button class="btn btn-primary">Create</button>
+          </div>
+
+          <button
+            class="hamburger"
+            id="hamburger"
+            onclick="this.classList.toggle('opened');this.setAttribute('aria-expanded', this.classList.contains('opened'))"
+            aria-label="Main Menu"
+          >
+            <svg width="100" height="80" viewBox="0 0 100 100">
+              <path
+                class="line line1"
+                d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058"
+              />
+              <path class="line line2" d="M 20,50 H 80" />
+              <path
+                class="line line3"
+                d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+      integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+      crossorigin="anonymous"
+    ></script>
+    <script src="app.js"></script>
+  </body>
+</html>
