@@ -500,7 +500,7 @@ button {
   height: 100%;
   width: 45%;
   gap: 2rem;
-  padding: 0 50px;
+  padding: 0 40px;
 }
 
 .containerIsiText{
@@ -630,6 +630,8 @@ button {
     align-items: stretch;
     row-gap: 1rem;
     padding: 1rem;
+    background-color: var(--color1);
+    border: 1px var(--color4) solid;
   }
 
   .menu-bar .nav-link {
@@ -651,5 +653,18 @@ button {
   }
   .right-container {
     display: none;
+  }
+
+  .containerHome{
+    height: auto;
+    flex-direction: column;
+    overflow: scroll;
+    padding: 0;
+  }
+
+  .containerIsi,
+  .containerFotoHome{
+    width: 100%;
+    height: 100vh;
   }
 }
