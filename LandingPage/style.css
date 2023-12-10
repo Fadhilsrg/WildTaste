@@ -599,7 +599,7 @@ button {
       background: rgb(2, 2, 46);
       background: linear-gradient(
         0deg,
-        rgba(0, 0, 0, 0.676) 0%,
+        rgba(0, 0, 0, 0.674) 0%,
         rgba(255, 255, 255, 0) 100%
       );
       transform: translatey(100%);
