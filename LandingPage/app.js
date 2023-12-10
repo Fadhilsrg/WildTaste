@@ -10,21 +10,10 @@ jQuery(function ($) {
       if ($animatable.offset().top + $animatable.height() - 50 < offset) {
         if (!$animatable.hasClass("animate-in")) {
           $animatable
-            .removeClass("animate-out")
             .css("top", $animatable.css("top"))
             .addClass("animate-in");
         }
-      } else if (
-        $animatable.offset().top + $animatable.height() - 50 >
-        offset
-      ) {
-        if ($animatable.hasClass("animate-in")) {
-          $animatable
-            .removeClass("animate-in")
-            .css("top", $animatable.css("top"))
-            .addClass("animate-out");
-        }
-      }
+      } 
     });
   };
 
