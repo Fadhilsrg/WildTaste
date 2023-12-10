@@ -8,7 +8,7 @@
   --color4: #ffffff;
   --ff-primary: "DM Serif Text", serif;
   --ff-secondary: "Montserrat", sans-serif;
-  --border: 1px solid var(--gacolor4);
+  --border: 1px solid var(--color4);
 }
 
 body {
@@ -217,28 +217,27 @@ p {
   }
 }
 
-.animate-in.animationDelay,
-.animate-out.animationDelay {
+.animate-in.animationDelay {
+  animation-delay: 0.2s;
+  -webkit-animation-delay: 0.2s;
+}
+.animate-in.animationDelayMed {
   animation-delay: 0.4s;
   -webkit-animation-delay: 0.4s;
 }
-.animate-in.animationDelayMed,
-.animate-out.animationDelayMed {
-  animation-delay: 1.2s;
-  -webkit-animation-delay: 1.2s;
+.animate-in.animationDelayLong {
+  animation-delay: 0.6s;
+  -webkit-animation-delay: 0.6s;
 }
-.animate-in.animationDelayLong,
-.animate-out.animationDelayLong {
-  animation-delay: 1.6s;
-  -webkit-animation-delay: 1.6s;
+.animate-in.animationDelayLongLong {
+  animation-delay: 0.8s;
+  -webkit-animation-delay: 0.8s;
 }
-.animate-in.bounceInRight,
-.animate-out.bounceInRight {
+.animate-in.bounceInRight {
   -webkit-animation-name: bounceInRight;
   animation-name: bounceInRight;
 }
-.animate-in.bounceInLeft,
-.animate-out.bounceInLeft {
+.animate-in.bounceInLeft {
   -webkit-animation-name: bounceInLeft;
   animation-name: bounceInLeft;
 }
@@ -348,7 +347,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 1600px;
+  max-width: 1800px;
   margin: 0 auto;
   column-gap: 2.4rem;
   height: 90px;
@@ -365,7 +364,7 @@ button {
 }
 
 .menu-bar .nav-link {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 500;
   letter-spacing: -0.6px;
   padding: 0.3rem;
@@ -547,8 +546,7 @@ button {
 
 .containerDiscoverContent {
   height: 85%;
-  width: 100%;
-  padding: 0 64px;
+  width: 98%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -557,7 +555,7 @@ button {
   > a {
     flex: 0 0 auto;
     height: 90%;
-    width: 30%;
+    width: 33%;
     transition: 0.5s ease-in-out;
     cursor: pointer;
     position: relative;
@@ -567,16 +565,13 @@ button {
     border-image-slice: 1;
 
     &:nth-of-type(1) {
-      background: url("img/Dog.png")
-        no-repeat 50% / cover;
+      background: url("img/Dog.png") no-repeat 50% / cover;
     }
     &:nth-of-type(2) {
-      background: url("img/Cat.png")
-        no-repeat 50% / cover;
+      background: url("img/Cat.png") no-repeat 50% / cover;
     }
     &:nth-of-type(3) {
-      background: url("img/Fish.jpg")
-        no-repeat 50% / cover;
+      background: url("img/Fish.png") no-repeat 50% / cover;
     }
 
     .content {
@@ -623,6 +618,161 @@ button {
         rgba(0, 0, 0, 0.676) 0%,
         rgba(255, 255, 255, 0.5) 100%
       );
+    }
+  }
+}
+
+/* ^^^^^^^^^^^^^^^^^^^^^^^^^^Trending^^^^^^^^^^^^^^^^^^^^^^ */
+.containerTrending {
+  width: 100%;
+  padding: 0 64px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.baris {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 10px;
+  padding-top: 44px;
+}
+
+.kolom{
+  width: auto;
+}
+
+.kartu {
+  position: relative;
+  height: 400px;
+  width: 370px;
+  margin: 10px 0;
+  transition: ease all 2.3s;
+  perspective: 1200px;
+  &:hover {
+    .cover {
+      transform: rotateX(0deg) rotateY(-180deg);
+      &:before {
+        transform: translateZ(30px);
+      }
+      &:after {
+        background-color: black;
+      }
+      h1 {
+        transform: translateZ(100px);
+      }
+      .price {
+        transform: translateZ(60px);
+      }
+      a {
+        transform: translateZ(-60px) rotatey(-180deg);
+      }
+    }
+  }
+
+  .cover {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    transform-style: preserve-3d;
+    transition: ease all 2.3s;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    &:before {
+      content: "";
+      position: absolute;
+      border: 2px solid var(--color4);
+      border-image: linear-gradient(to left, var(--color2), var(--color4));
+      border-image-slice: 1;
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+      top: 1px;
+      left: 1px;
+      right: 1px;
+      bottom: 1px;
+      z-index: 2;
+      transition: ease all 2.3s;
+      transform-style: preserve-3d;
+      transform: translateZ(0px);
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      right: 0px;
+      bottom: 0px;
+      z-index: 2;
+      transition: ease all 1.3s;
+      background: rgba(0, 0, 0, 0.4);
+    }
+    &.item-a {
+      background-image: url("img/Cat.jpg");
+    }
+    &.item-b {
+      background-image: url("img/Cat.jpg");
+    }
+    &.item-c {
+      background-image: url("img/Cat.jpg");
+    }
+    h1 {
+      color: var(--color4);
+      position: absolute;
+      bottom: 55px;
+      left: 50px;
+      transform-style: preserve-3d;
+      transition: ease all 2.3s;
+      z-index: 3;
+      font-size: 2.5rem;
+      transform: translateZ(0px);
+    }
+    .price {
+      position: absolute;
+      top: 55px;
+      right: 50px;
+      color: var(--color4);
+      transform-style: preserve-3d;
+      transition: ease all 2.3s;
+      z-index: 4;
+      font-size: 2rem;
+      transform: translateZ(0px);
+    }
+  }
+  .card-back {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: var(--color1);
+    transform-style: preserve-3d;
+    transition: ease all 2.3s;
+    transform: translateZ(-1px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--color4);
+      border-image: linear-gradient(to left, var(--color2), var(--color4));
+      border-image-slice: 1;
+    a {
+      transform-style: preserve-3d;
+      transition: ease transform 2.3s, ease background 0.5s;
+      transform: translateZ(-1px) rotatey(-180deg);
+      background: transparent;
+      border: 2px solid var(--color4);
+      border-image: linear-gradient(to left, var(--color2), var(--color4));
+      border-image-slice: 1;
+      font-size: 1rem;
+      color: white;
+      padding: 12px 18px;
+      outline: none;
+      text-decoration: none;
+      &:hover {
+        background-color: white;
+        color: var(--color1);
+      }
     }
   }
 }
@@ -778,16 +928,20 @@ button {
     opacity: 0.6;
   }
 
-  .containerIsiButton .btn{
+  .containerIsiButton .btn {
     font-size: 1rem !important;
   }
 
-  .containerDiscover{
+  .containerDiscover {
     padding: 0 10px;
   }
 
   .containerDiscoverContent {
     padding: 0;
     height: 75%;
+  }
+
+  .containerTrending{
+    padding: 0 10px;
   }
 }
