@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Text&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif:wght@100;500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap");
 
 :root {
@@ -465,7 +465,7 @@ button {
   font-size: 1.9rem;
 }
 
-/* Home */
+/*^^^^^^^^^^^^^^^^^^^^ Home ^^^^^^^^^^^^^^^^^^*/
 .containerHome {
   display: flex;
   width: 100%;
@@ -492,6 +492,7 @@ button {
 
 .containerIsiText h1 {
   font-size: 4rem;
+  font-weight: 500;
 }
 
 .containerIsiText h2 {
@@ -526,6 +527,114 @@ button {
   width: 95%;
 }
 
+/* ^^^^^^^^^^^^^^^^^^^^^^^^^^Discover^^^^^^^^^^^^^^^^^^^^^^ */
+.containerDiscover {
+  width: 100%;
+  height: 100vh;
+  padding: 0 64px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.containerDiscoverText {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-weight: 100;
+  font-size: 2.5rem;
+}
+
+.containerDiscoverText p {
+  font-size: 1.2rem;
+}
+
+.containerDiscoverContent {
+  height: 85%;
+  width: 100%;
+  padding: 0 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  > a {
+    flex: 0 0 auto;
+    height: 90%;
+    width: 30%;
+    border-radius: 0.5rem;
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+    box-shadow: 1px 5px 15px var(--color2);
+    position: relative;
+    overflow: hidden;
+
+    &:nth-of-type(1) {
+      background: url("https://images.pexels.com/photos/1845208/pexels-photo-1845208.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260")
+        no-repeat 50% / cover;
+    }
+    &:nth-of-type(2) {
+      background: url("https://images.pexels.com/photos/36469/woman-person-flowers-wreaths.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260")
+        no-repeat 50% / cover;
+    }
+    &:nth-of-type(3) {
+      background: url("https://images.pexels.com/photos/1468379/pexels-photo-1468379.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260")
+        no-repeat 50% / cover;
+    }
+
+    .content {
+      font-size: 2.5rem;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      padding: 15px;
+      opacity: 0;
+      flex-direction: column;
+      height: 100%;
+      justify-content: flex-end;
+      background: rgb(2, 2, 46);
+      background: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.676) 0%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      transform: translatey(100%);
+      transition: opacity 0.5s ease-in-out, transform 0.5s 0.2s;
+      visibility: hidden;
+
+      p {
+        display: block;
+        margin-top: 5px;
+        font-size: 1.2rem;
+      }
+    }
+
+    &:hover {
+      width: 35%;
+      box-shadow: 1px 3px 15px var(--color2);
+      transform: translatey(-20px);
+    }
+
+    &:hover .content {
+      opacity: 1;
+      transform: translatey(0%);
+      visibility: visible;
+    }
+    &:active .content {
+      background: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.676) 0%,
+        rgba(255, 255, 255, 0.5) 100%
+      );
+    }
+  }
+}
+
+/* ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^RESPONSIVE^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ */
 @media (max-width: 830px) {
   #hamburger {
     background-color: transparent;
