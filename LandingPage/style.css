@@ -803,6 +803,7 @@ button {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 0 64px;
 }
 
 .containerTestimonialText {
@@ -816,7 +817,49 @@ button {
   font-size: 1.2rem;
 }
 
+.containerTestimonialIsi {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
 
+form {
+  width: 60%;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 20px 0;
+}
+
+input[type="text"],
+textarea,
+input[type="submit"] {
+  width: 600px;
+  background: none;
+  border: 2px solid var(--color4);
+  border-image: linear-gradient(to left, var(--color2), var(--color4));
+  border-image-slice: 1;
+  resize: none;
+  color: var(--color4);
+  font-size: 1rem;
+  font-family: var(--ff-secondary);
+  padding: 10px;
+}
+
+textarea {
+  height: auto;
+}
+
+.containerTestiBtn {
+  padding-top: 40px;
+}
+
+input[type="submit"] {
+  width: 120px;
+}
 
 /* ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^RESPONSIVE^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ */
 @media (max-width: 830px) {
@@ -986,7 +1029,7 @@ button {
     padding: 0 10px;
   }
 
-  .containerTestimonial{
+  .containerTestimonial {
     padding: 0 10px;
   }
 }
