@@ -736,14 +736,14 @@ button {
       background: rgba(0, 0, 0, 0.4);
     }
     &.item-a {
-      background-image: url(img/Cat.jpg);
+      background-image: url(img/Cat.webp);
       background-position: center;
     }
     &.item-b {
-      background-image: url(img/Cat.jpg);
+      background-image: url(img/Cat.webp);
     }
     &.item-c {
-      background-image: url(img/Cat.jpg);
+      background-image: url(img/Cat.webp);
     }
     h1 {
       color: var(--color4);
