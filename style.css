@@ -727,15 +727,15 @@ button {
       background: rgba(0, 0, 0, 0.4);
     }
     &.item-a {
-      background-image: url(img/Cat.jpg);
+      background-image: url('/img/Cat.jpg');
       background-position: center;
     }
     &.item-b {
-      background-image: url(img/Cat.jpg);
+      background-image: url('/img/Cat.jpg');
       
     }
     &.item-c {
-      background-image: url(img/Cat.jpg);
+      background-image: url('/img/Cat.jpg');
     }
     h1 {
       color: var(--color4);
@@ -806,7 +806,7 @@ button {
   justify-content: center;
   align-items: center;
   padding: 0 64px;
-  background-image: url(img/BackgroundTesti.jpg);
+  background-image: url('/img/BackgroundTesti.jpg');
   background-size: contain;
   background-clip: content-box;
 }
