@@ -569,18 +569,21 @@ button {
     border-image-slice: 1;
 
     &:nth-of-type(1) {
+      display: flex;
       background-image: url(img/Dog.webp);
       background-repeat: no-repeat;
       background-position: 50% center;
       background-size: cover;
     }
     &:nth-of-type(2) {
+      display: flex;
       background-image: url(img/Cat.webp);
       background-repeat: no-repeat;
       background-position: 50% center;
       background-size: cover;
     }
     &:nth-of-type(3) {
+      display: flex;
       background-image: url(img/Fish.webp);
       background-repeat: no-repeat;
       background-position: 50% center;
@@ -736,13 +739,16 @@ button {
       background: rgba(0, 0, 0, 0.4);
     }
     &.item-a {
+      display: flex;
       background-image: url(img/Cat.webp);
       background-position: center;
     }
     &.item-b {
+      display: flex;
       background-image: url(img/Cat.webp);
     }
     &.item-c {
+      display: flex;
       background-image: url(img/Cat.webp);
     }
     h1 {
