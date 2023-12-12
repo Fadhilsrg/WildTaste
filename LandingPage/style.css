@@ -824,7 +824,7 @@ button {
 }
 
 form {
-  width: 60%;
+  width: 80%;
   height: 50vh;
   display: flex;
   flex-direction: column;
@@ -837,7 +837,9 @@ form {
 input[type="text"],
 textarea,
 input[type="submit"] {
-  width: 600px;
+  width: 100%;
+  max-width: 600px;
+  min-width: 300px;
   background: none;
   border: 2px solid var(--color4);
   border-image: linear-gradient(to left, var(--color2), var(--color4));
@@ -858,7 +860,7 @@ textarea {
 }
 
 input[type="submit"] {
-  width: 120px;
+  min-width: 120px;
 }
 
 /* ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^RESPONSIVE^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ */
@@ -1029,9 +1031,20 @@ input[type="submit"] {
     padding: 0 10px;
   }
 
+  .kartu {
+    width: 350px;
+    height: 300px;
+  }
+
+  .card-back a.card-backBtn{
+    padding: 4px 8px;
+    text-align: center;
+  }
+
   .containerTestimonial {
     padding: 0 10px;
   }
+
 }
 
 @media (max-width: 500px) {
@@ -1048,9 +1061,20 @@ input[type="submit"] {
     align-items: center;
     justify-content: center;
   }
-
+  
   .cover h1 {
     font-size: 1.2rem !important;
     text-align: center;
   }
+
+  .cover .price{
+    right: 40px !important;
+  }
+
+  .card-back{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
 }
