@@ -575,7 +575,7 @@ button {
       background: url("img/Cat.png") no-repeat 50% / cover;
     }
     &:nth-of-type(3) {
-      background: url("img/Fish.png") no-repeat 50% / cover;
+      background: url("img/Fish.jpg") no-repeat 50% / cover;
     }
 
     .content {
@@ -1019,6 +1019,7 @@ input[type="submit"] {
   }
 
   .containerDiscover {
+    height: 50vh;
     padding: 0 10px;
   }
 
@@ -1036,7 +1037,7 @@ input[type="submit"] {
     height: 300px;
   }
 
-  .card-back a.card-backBtn{
+  .card-back a.card-backBtn {
     padding: 4px 8px;
     text-align: center;
   }
@@ -1044,7 +1045,6 @@ input[type="submit"] {
   .containerTestimonial {
     padding: 0 10px;
   }
-
 }
 
 @media (max-width: 500px) {
@@ -1061,20 +1061,19 @@ input[type="submit"] {
     align-items: center;
     justify-content: center;
   }
-  
+
   .cover h1 {
     font-size: 1.2rem !important;
     text-align: center;
   }
 
-  .cover .price{
+  .cover .price {
     right: 40px !important;
   }
 
-  .card-back{
+  .card-back {
     display: flex;
     flex-direction: column;
     gap: 16px;
   }
-
 }
