@@ -265,6 +265,7 @@ textarea {
 #nav-menu {
   width: 100vw;
   position: absolute;
+  overflow-x: hidden;
 }
 
 ul {
@@ -569,22 +570,19 @@ button {
     border-image-slice: 1;
 
     &:nth-of-type(1) {
-      display: flex;
-      background-image: url(img/Dog.webp);
+      background: url(img/Dog.webp);
       background-repeat: no-repeat;
       background-position: 50% center;
       background-size: cover;
     }
     &:nth-of-type(2) {
-      display: flex;
-      background-image: url(img/Cat.webp);
+      background: url(img/Cat.webp);
       background-repeat: no-repeat;
       background-position: 50% center;
       background-size: cover;
     }
     &:nth-of-type(3) {
-      display: flex;
-      background-image: url(img/Fish.webp);
+      background: url(img/Fish.webp);
       background-repeat: no-repeat;
       background-position: 50% center;
       background-size: cover;
@@ -739,16 +737,13 @@ button {
       background: rgba(0, 0, 0, 0.4);
     }
     &.item-a {
-      display: flex;
       background-image: url(img/Cat.webp);
       background-position: center;
     }
     &.item-b {
-      display: flex;
       background-image: url(img/Cat.webp);
     }
     &.item-c {
-      display: flex;
       background-image: url(img/Cat.webp);
     }
     h1 {
@@ -811,7 +806,6 @@ button {
 }
 
 /* ^^^^^^^^^^^^^^^^^^^^^^^^^^Testimonial^^^^^^^^^^^^^^^^^^^^^^ */
-/* BACKGROUNDDDDDDDDDDNYA GANTI */
 .containerTestimonial {
   height: auto;
   display: flex;
@@ -820,9 +814,8 @@ button {
   justify-content: center;
   align-items: center;
   padding: 0 64px;
-  background-image: url(img/BackgroundTesti.webp);
-  background-size: contain;
-  background-clip: content-box;
+  background: url(img/BackgroundTesti.svg);
+  background-size: cover;
 }
 
 .containerTestimonialText {
@@ -856,10 +849,10 @@ form {
 input[type="text"],
 textarea,
 input[type="submit"] {
+  background-color: #000000;
   width: 100%;
   max-width: 600px;
   min-width: 300px;
-  background: none;
   border: 2px solid var(--color4);
   border-image: linear-gradient(to left, var(--color2), var(--color4));
   border-image-slice: 1;
@@ -872,6 +865,7 @@ input[type="submit"] {
 
 textarea {
   height: auto;
+  background-color: var(--color1);
 }
 
 .containerTestiBtn {
