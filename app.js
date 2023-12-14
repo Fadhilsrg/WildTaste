@@ -21,7 +21,7 @@ jQuery(function ($) {
   $(window).trigger("scroll");
 });
 
-// script.js
+// NAVBAR
 const dropdownBtn = document.querySelectorAll(".dropdown-btn");
 const dropdown = document.querySelectorAll(".dropdown");
 const hamburgerBtn = document.getElementById("hamburger");
@@ -86,3 +86,33 @@ document.addEventListener("keydown", (e) => {
 });
 
 hamburgerBtn.addEventListener("click", toggleHamburger);
+
+// Show container
+document.addEventListener("DOMContentLoaded", function () {
+  var form = document.getElementById("testimonialForm");
+  var responseContainer = form.querySelector(".containerResponse");
+  var input = form.querySelector("input");
+  var textarea = form.querySelector("textarea");
+  var submitButton = document.getElementById("submitBtn");
+  var showButton = document.getElementById("showBtn");
+  var closeButton = document.getElementById("closeBtn");
+
+  showButton.addEventListener("click", function () {
+      responseContainer.style.display = "flex";
+      input.style.display = "none";
+      textarea.style.display = "none";
+      submitButton.style.display = "none";
+      showButton.style.display = "none";
+      closeButton.style.display = "block";
+  })
+
+  closeButton.addEventListener("click", function () {
+    responseContainer.style.display = "none";
+    input.style.display = "block";
+    textarea.style.display = "block";
+    submitButton.style.display = "block";
+    showButton.style.display = "block";
+    closeButton.style.display = "none";
+  })
+});
+

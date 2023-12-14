@@ -290,21 +290,21 @@
           </p>
         </div>
         <div class="containerTestimonialIsi">
-          <form>
-            <input
-              name="name"
-              type="text"
-              class="feedback-input"
-              placeholder="Name"
-            />
+          <form id="testimonialForm">
+            <input name="name" type="text" class="feedback-input animatable fadeIn" placeholder="Name"/>
             <textarea
               name="testimony"
               rows="30"
-              class="feedback-input"
+              class="feedback-input animatable fadeIn"
               placeholder="Write Your Testimony"
             ></textarea>
+            <div class="containerResponse">
+
+            </div>
             <div class="containerTestiBtn">
-              <a><input type="submit" class="btn" value="Submit" /></a>
+              <a><input type="submit" class="btn animatable fadeIn" value="Submit" id="submitBtn" /></a>
+              <a href="#Testi" class="btn animatable fadeIn" id="showBtn">Show Responses</a>
+              <a href="#Testi" class="btn animatable fadeIn" style="display: none;" id="closeBtn">Close</a>
             </div>
           </form>
         </div>

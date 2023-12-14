@@ -70,8 +70,8 @@ textarea {
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
 
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
 
   -webkit-animation-play-state: running;
   animation-play-state: running;
@@ -219,6 +219,24 @@ textarea {
   }
 }
 
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 .animate-in.animationDelay {
   animation-delay: 0.2s;
   -webkit-animation-delay: 0.2s;
@@ -265,7 +283,6 @@ textarea {
 #nav-menu {
   width: 100vw;
   position: absolute;
-  overflow-x: hidden;
 }
 
 ul {
@@ -426,6 +443,8 @@ button {
   gap: 0.5rem;
   padding: 1.2rem;
   font-size: 1rem;
+  z-index: 1000 !important;
+  height: auto;
 }
 
 .dropdown-btn {
@@ -531,6 +550,9 @@ button {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background: url(img/BackgroundDiscover.svg);
+  background-size: cover;
+  background-position: right center;
 }
 
 .containerDiscoverText {
@@ -846,6 +868,10 @@ form {
   padding: 20px 0;
 }
 
+.containerResponse{
+  display: none;
+}
+
 input[type="text"],
 textarea,
 input[type="submit"] {
@@ -869,11 +895,14 @@ textarea {
 }
 
 .containerTestiBtn {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
   padding-top: 40px;
 }
 
-input[type="submit"] {
-  min-width: 120px;
+input[type="submit"], .containerTestiBtn a.btn {
+  min-width: 190px;
 }
 
 /* ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^RESPONSIVE^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ */
@@ -1088,5 +1117,9 @@ input[type="submit"] {
     display: flex;
     flex-direction: column;
     gap: 16px;
+  }
+
+  .containerTestiBtn {
+    flex-direction: column;
   }
 }
