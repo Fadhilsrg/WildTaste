@@ -103,27 +103,22 @@
     </header>
 
     <section id="home">
-      <div class="containerHome">
+      <div class="containerHome" style="overflow-x: hidden;">
         <div class="containerIsi">
-          <div class="containerIsiText">
+          <div class="containerIsiText animatable bounceInLeft animationDelay">
             <h1>Wild Taste</h1>
             <h2>Pet Food</h2>
           </div>
-          <p>
+          <p class="pIsiText animatable bounceInLeft animationDelayMed">
             Nourishing Pets with Nature's Bounty, Fostering Wellness and
             Happiness Beyond Compare!
           </p>
-          <div class="containerIsiButton">
-            <a href="#discover"
-              ><button
-                class="btn"
-                style="font-size: 1.2rem; padding: 12px 16px"
-              >
+          <div class="containerIsiButton animatable bounceInLeft animationDelayLong">
+            <a href="#discover"><button class="btn" style="font-size: 1.2rem; padding: 12px 16px">
                 Shop Now
-              </button></a
-            >
+              </button></a>
           </div>
-          <div class="containerIsiData">
+          <div class="containerIsiData animatable bounceInLeft animationDelayLongLong">
             <div class="data">
               <h1>48K+</h1>
               <p>Dog Food</p>
@@ -139,7 +134,7 @@
           </div>
         </div>
         <div class="containerFotoHome">
-          <img src="img/Home.png" alt="" class="imgHome animatable fadeIn" />
+          <img src="img/Home.png" alt="" class="imgHome animatable bounceInRight animationDelayLong" />
         </div>
       </div>
     </section>
@@ -306,7 +301,7 @@
             <textarea
               name="testimony"
               rows="30"
-              class="feedback-input animatable fadeIn"
+              class="feedback-input animatable fadeIn animationDelay"
               placeholder="Write Your Testimony"
               maxlength="135"
             ></textarea>
@@ -424,7 +419,7 @@
             </div>
             <div class="containerTestiBtn">
               <div
-                class="containerSubmitBtn animatable fadeIn"
+                class="containerSubmitBtn animatable fadeIn animationDelayLong"
                 id="containerSubmit"
               >
                 <a
