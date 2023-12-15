@@ -287,6 +287,18 @@ body {
   position: absolute;
 }
 
+.containerNav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1800px;
+  margin: 0 auto;
+  column-gap: 2.4rem;
+  height: 90px;
+  padding: 0.8rem 4rem;
+  background-color: var(--color1);
+}
+
 ul {
   list-style: none;
   font-family: var(--ff-secondary);
@@ -364,17 +376,6 @@ button {
 
 .logo {
   margin-right: 1.5rem;
-}
-
-.containerNav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  max-width: 1800px;
-  margin: 0 auto;
-  column-gap: 2.4rem;
-  height: 90px;
-  padding: 0.8rem 4rem;
 }
 
 .menu {
