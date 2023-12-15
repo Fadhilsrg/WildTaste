@@ -96,23 +96,42 @@ document.addEventListener("DOMContentLoaded", function () {
   var submitButton = document.getElementById("submitBtn");
   var showButton = document.getElementById("showBtn");
   var closeButton = document.getElementById("closeBtn");
+  var containerSubmit = document.getElementById("containerSubmit")
+  var containerShow = document.getElementById("containerShow");
+  var containerClose = document.getElementById("containerClose");
 
   showButton.addEventListener("click", function () {
       responseContainer.style.display = "flex";
       input.style.display = "none";
       textarea.style.display = "none";
-      submitButton.style.display = "none";
-      showButton.style.display = "none";
-      closeButton.style.display = "block";
-  })
+      containerSubmit.style.display = "none";
+      containerShow.style.display = "none";
+      containerClose.style.display = "flex";
+  });
 
   closeButton.addEventListener("click", function () {
     responseContainer.style.display = "none";
     input.style.display = "block";
     textarea.style.display = "block";
-    submitButton.style.display = "block";
-    showButton.style.display = "block";
-    closeButton.style.display = "none";
-  })
+    containerSubmit.style.display = "flex";
+    containerShow.style.display = "flex";
+    containerClose.style.display = "none";
+  });
+});
+
+// menghitung panjang slider agar animasi smooth 
+document.addEventListener("DOMContentLoaded", function () {
+  // Menghitung jumlah slide asli
+  var slideCount = document.querySelectorAll(".slide").length;
+
+  // Mengatur properti transform dan width sesuai dengan jumlah slide asli
+  var containerResponse = document.querySelector(".containerResponse");
+  var slideTrack = document.querySelector(".slide-track");
+
+  // Mengatur properti width pada .slide-track
+  slideTrack.style.width = "calc(250px * " + slideCount + ")";
+
+  // Mengatur properti transform pada .slide-track
+  containerResponse.style.setProperty("--slide-count", slideCount);
 });
 
