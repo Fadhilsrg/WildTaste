@@ -9,7 +9,7 @@
   --ff-primary: "DM Serif Text", serif;
   --ff-secondary: "Montserrat", sans-serif;
   --border: 1px solid var(--color4);
-  --slide-count: 6;
+  --slide-count: 4;
 }
 
 body {
@@ -759,16 +759,6 @@ button {
       transition: ease all 1.3s;
       background: rgba(0, 0, 0, 0.4);
     }
-    &.item-a {
-      background-image: url(img/Cat.webp);
-      background-position: center;
-    }
-    &.item-b {
-      background-image: url(img/Cat.webp);
-    }
-    &.item-c {
-      background-image: url(img/Cat.webp);
-    }
     h1 {
       color: var(--color4);
       position: absolute;
@@ -828,8 +818,40 @@ button {
   }
 }
 
-/* ^^^^^^^^^^^^^^^^^^^^^^^^^^Testimonial^^^^^^^^^^^^^^^^^^^^^^ */
+.item-1 {
+  background-image: url(img/Cat.webp);
+  background-position: center;
+}
+.item-2 {
+  background-image: url(img/Cat.webp);
+  background-position: center;
+}
+.item-3 {
+  background-image: url(img/Cat.webp);
+  background-position: center;
+}
+.item-4 {
+  background-image: url(img/Cat.webp);
+  background-position: center;
+}
+.item-5 {
+  background-image: url(img/Cat.webp);
+  background-position: center;
+}
+.item-6 {
+  background-image: url(img/Cat.webp);
+  background-position: center;
+}
+.item-7 {
+  background-image: url(img/Cat.webp);
+  background-position: center;
+}
+.item-8 {
+  background-image: url(img/Cat.webp);
+  background-position: center;
+}
 
+/* ^^^^^^^^^^^^^^^^^^^^^^^^^^Testimonial^^^^^^^^^^^^^^^^^^^^^^ */
 .containerTestimonial {
   height: auto;
   display: flex;
@@ -840,6 +862,7 @@ button {
   padding: 0 64px;
   background: url(img/BackgroundTesti.svg);
   background-size: cover;
+  background-position: center;
 }
 
 .containerTestimonialText {
@@ -871,7 +894,7 @@ form {
 }
 
 input[type="text"],
-textarea{
+textarea {
   background-color: #000000;
   width: 100%;
   max-width: 600px;
@@ -898,66 +921,75 @@ textarea {
   padding-top: 40px;
 }
 
-input[type="submit"], .containerTestiBtn a.btn {
+input[type="submit"],
+.containerTestiBtn a.btn {
   min-width: 190px;
 }
 
-.containerCloseBtn{
+.containerCloseBtn {
   display: none;
 }
 
 /* SLIDER AND CONTAINER RESPONSE*/
-
 @keyframes scroll {
-	0% { 
-    transform: translateX(0); 
+  0% {
+    transform: translateX(0);
   }
-	100% { 
-    transform: translateX(calc(-250px * calc(var(--slide-count) / 2))) /* Akan disesuaikan oleh Javascript*/
+  100% {
+    transform: translateX(
+      calc(-250px * calc(var(--slide-count) / 2))
+    ); /* Akan disesuaikan oleh Javascript*/
   }
 }
 
 .containerResponse {
   display: none;
-	background: var(--color2);
-	box-shadow: 0 10px 20px -5px rgba(255, 255, 255, .125);
-	height: 300px;
+  background: var(--color2);
+  box-shadow: 0 10px 20px -5px rgba(255, 255, 255, 0.125);
+  height: 300px;
   align-items: center;
-	overflow:hidden;
-	position: relative;
-	width: 100%;
-  max-width: 600px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  max-width: 720px;
   min-width: 300px;
-	
-	&::before,
-	&::after {
-	background: linear-gradient(to right,  var(--color4) 0%,rgba(255,255,255,0) 100%);
-		content: "";
-		position: absolute;
-		width: 200px;
-		z-index: 2;
-	}
-	
-	&::after {
-		right: 0;
-		top: 0;
-		transform: rotateZ(180deg);
-	}
 
-	&::before {
-		left: 0;
-		top: 0;
-	}
-	
-	.slide-track {
-		animation: scroll 40s linear infinite;
-		display: flex;
-		width: calc(250px * var(--slide-count)); /* Akan disesuaikan oleh Javascript*/
-	}
-	
-	.slide {
-		width: 250px;
-	}
+  &::before,
+  &::after {
+    background: linear-gradient(
+      to right,
+      var(--color1) 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    content: "";
+    position: absolute;
+    width: 50px;
+    z-index: 2;
+    height: 100%;
+  }
+
+  &::after {
+    right: 0;
+    top: 0;
+    transform: rotateZ(180deg);
+  }
+
+  &::before {
+    left: 0;
+    top: 0;
+  }
+
+  .slide-track {
+    animation: scroll 40s linear infinite;
+    display: flex;
+    width: calc(
+      250px * var(--slide-count)
+    ); /* Akan disesuaikan oleh Javascript*/
+  }
+
+  .slide {
+    width: 250px;
+  }
 }
 
 .containerKartuTesti {
@@ -966,33 +998,33 @@ input[type="submit"], .containerTestiBtn a.btn {
   display: flex;
   align-items: center;
   justify-content: center;
-  
-  .cards {    
+
+  .cards {
     display: flex;
     gap: 10px;
     pointer-events: none;
   }
-  
+
   .kartuTesti {
     width: 250px;
-    height: 100%;
+    height: 200px;
     color: #ffffff;
     padding: 1.5rem;
     background-color: var(--color1);
     pointer-events: auto;
     transform: scale(1);
     opacity: 1;
-    transition: all 150ms ease-in-out; 
+    transition: all 150ms ease-in-out;
     display: flex;
     justify-content: center;
     flex-direction: column;
     border: 2px solid var(--color4);
     border-image: linear-gradient(to left, var(--color2), var(--color4));
     border-image-slice: 1;
-    
+
     .card-title {
       position: relative;
-      
+
       &::before {
         content: "";
         height: 1rem;
@@ -1000,21 +1032,21 @@ input[type="submit"], .containerTestiBtn a.btn {
         border-radius: 50%;
         box-shadow: inset 0 0 3px var(--color2);
         background-color: transparent;
-        
+
         right: 0;
       }
     }
-    
+
     .date {
-      color: var(--color3 );
+      color: var(--color3);
       font-size: 0.85rem;
       margin-bottom: 1.5rem;
     }
-    
+
     .description {
       font-size: 0.9rem;
     }
-    
+
     &:nth-child(n) {
       transform: rotate(-5deg);
     }
@@ -1023,7 +1055,7 @@ input[type="submit"], .containerTestiBtn a.btn {
 
 .cards:hover > .kartuTesti:hover {
   transform: scale(1.15);
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   z-index: 10;
 }
 .cards:hover > .kartuTesti:not(:hover) {
