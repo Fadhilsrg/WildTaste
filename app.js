@@ -62,7 +62,6 @@ dropdownBtn.forEach((btn) => {
   });
 });
 
-// close dropdown menu when the dropdown links are clicked
 links.forEach((link) =>
   link.addEventListener("click", () => {
     closeDropdownMenu();
@@ -71,13 +70,11 @@ links.forEach((link) =>
   })
 );
 
-// close dropdown menu when you click on the document body
 document.documentElement.addEventListener("click", () => {
   closeDropdownMenu();
   setAriaExpandedFalse();
 });
 
-// close dropdown when the escape key is pressed
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") {
     closeDropdownMenu();
@@ -86,6 +83,18 @@ document.addEventListener("keydown", (e) => {
 });
 
 hamburgerBtn.addEventListener("click", toggleHamburger);
+
+// Cart
+document.getElementById('cartLink').addEventListener('click', function(event) {
+  event.preventDefault(); 
+
+  var cartIcon = document.getElementById('cartIcon');
+  if (cartIcon.className === 'bx bx-cart') {
+    cartIcon.className = 'bx bxs-cart';
+} else {
+    cartIcon.className = 'bx bx-cart';
+}
+});
 
 // Show container
 document.addEventListener("DOMContentLoaded", function () {
