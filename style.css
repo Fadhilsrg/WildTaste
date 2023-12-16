@@ -773,6 +773,9 @@ button {
       transform: translateZ(0px);
     }
     .price {
+      display: flex;
+      flex-direction: row;
+      gap: 5px;
       position: absolute;
       top: 40px;
       right: 50px;
@@ -784,6 +787,7 @@ button {
       font-family: var(--ff-primary);
       font-size: 1.4rem;
     }
+    
   }
   .card-back {
     position: absolute;
@@ -809,7 +813,7 @@ button {
       border-image-slice: 1;
       font-size: 1rem;
       color: white;
-      padding: 12px 18px;
+      padding: 8px 12px;  
       outline: none;
       text-decoration: none;
       &:hover {
@@ -820,35 +824,7 @@ button {
   }
 }
 
-.item-1 {
-  background-image: url(img/Cat.webp);
-  background-position: center;
-}
-.item-2 {
-  background-image: url(img/Cat.webp);
-  background-position: center;
-}
-.item-3 {
-  background-image: url(img/Cat.webp);
-  background-position: center;
-}
-.item-4 {
-  background-image: url(img/Cat.webp);
-  background-position: center;
-}
-.item-5 {
-  background-image: url(img/Cat.webp);
-  background-position: center;
-}
-.item-6 {
-  background-image: url(img/Cat.webp);
-  background-position: center;
-}
-.item-7 {
-  background-image: url(img/Cat.webp);
-  background-position: center;
-}
-.item-8 {
+.item {
   background-image: url(img/Cat.webp);
   background-position: center;
 }
@@ -926,11 +902,9 @@ textarea {
 input[type="submit"],
 .containerTestiBtn a.btn {
   min-width: 190px;
+  height: 48px;
 }
 
-.containerCloseBtn {
-  display: none;
-}
 
 /* SLIDER AND CONTAINER RESPONSE*/
 @keyframes scroll {
@@ -1062,6 +1036,10 @@ input[type="submit"],
 }
 .cards:hover > .kartuTesti:not(:hover) {
   opacity: 0.5;
+}
+
+.containerCloseBtn {
+  display: none;
 }
 
 /* ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^RESPONSIVE^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ */
@@ -1239,7 +1217,7 @@ input[type="submit"],
   }
 
   .card-back a.card-backBtn {
-    padding: 4px 8px;
+    padding: 6px 12px;
     text-align: center;
   }
 
@@ -1254,7 +1232,7 @@ input[type="submit"],
     height: 300px;
   }
   .kartu {
-    width: 170px;
+    width: 160px;
     height: 300px;
   }
 
@@ -1267,19 +1245,38 @@ input[type="submit"],
   .cover h1 {
     font-size: 1.2rem !important;
     text-align: center;
+    left: 55px !important;
   }
 
   .cover .price {
-    right: 40px !important;
+    right: 30px !important;
   }
 
   .card-back {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 10px;
   }
 
   .containerTestiBtn {
     flex-direction: column;
+  }
+}
+
+@media (max-width: 350px){
+  .kartu {
+    width: 130px;
+  }
+  .cover .price {
+    right: 15px !important;
+  }
+
+  .cover h1 {
+    left: 40px !important;
+  }
+
+  a.card-backBtn{
+    padding: 4px 8px;
+    font-size: 0.8rem !important;
   }
 }
