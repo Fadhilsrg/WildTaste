@@ -135,3 +135,4 @@ document.addEventListener("DOMContentLoaded", function () {
   containerResponse.style.setProperty("--slide-count", slideCount);
 });
 
+
