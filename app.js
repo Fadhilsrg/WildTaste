@@ -121,7 +121,6 @@ document.addEventListener("DOMContentLoaded", function () {
   var responseContainer = form.querySelector(".containerResponse");
   var input = form.querySelector("input");
   var textarea = form.querySelector("textarea");
-  var submitButton = document.getElementById("submitBtn");
   var showButton = document.getElementById("showBtn");
   var closeButton = document.getElementById("closeBtn");
   var containerSubmit = document.getElementById("containerSubmit")
@@ -163,12 +162,10 @@ document.addEventListener("DOMContentLoaded", function () {
   containerResponse.style.setProperty("--slide-count", slideCount);
 });
 
-
 /* Set rates + misc */
 var taxRate = 0.05;
 var shippingRate = 10000; 
 var fadeTime = 300;
-
 
 /* Assign actions */
 $('.product-quantity input').change( function() {
@@ -186,7 +183,7 @@ function recalculateCart() {
 
   /* Sum up row totals */
   $('.product').each(function () {
-    subtotal += parseFloat($(this).children('.product-line-price').text().replace('Rp. ', '').replace('.', ''));
+    subtotal += parseFloat($(this).find('.product-line-price').text().replace('Rp. ', '').replace('.', ''));
   });
 
   /* Calculate totals */
@@ -216,19 +213,15 @@ function formatCurrency(amount) {
 
 /* Update quantity */
 function updateQuantity(quantityInput) {
-  /* Calculate line price */
-  var productRow = $(quantityInput).parent().parent();
-  var price = parseFloat(productRow.children('.product-price').text().replace('Rp. ', '').replace('.', ''));
-  var quantity = $(quantityInput).val();
+  var productRow = $(quantityInput).closest('.product');
+  var price = parseFloat(productRow.find('.product-price').text().replace('Rp. ', '').replace('.', ''));
+  var quantity = parseInt($(quantityInput).val(), 10);
   var linePrice = price * quantity;
 
-  /* Update line price display and recalc cart totals */
-  productRow.children('.product-line-price').each(function () {
-    $(this).fadeOut(fadeTime, function () {
-      $(this).text(formatCurrency(linePrice));
-      recalculateCart();
-      $(this).fadeIn(fadeTime);
-    });
+  productRow.find('.product-line-price').fadeOut(fadeTime, function () {
+    $(this).text(formatCurrency(linePrice));
+    recalculateCart();
+    $(this).fadeIn(fadeTime);
   });
 }
 
@@ -236,7 +229,7 @@ function updateQuantity(quantityInput) {
 function removeItem(removeButton)
 {
   /* Remove row from DOM and recalc cart total */
-  var productRow = $(removeButton).parent().parent();
+  var productRow = $(removeButton).parent().parent().parent();
   productRow.slideUp(fadeTime, function() {
     productRow.remove();
     recalculateCart();

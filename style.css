@@ -418,7 +418,7 @@ a.logo {
 }
 
 .nav-end {
-  justify-content: end;
+  justify-content: space-around;
 }
 
 .dropdown {
@@ -1351,6 +1351,10 @@ input[type="submit"],
     padding: 0;
   }
 
+  .nav-end {
+    justify-content: end;
+  }
+
   .site-footer {
     padding: 20px 20px;
   }
@@ -1571,10 +1575,13 @@ input[type="submit"],
 }
 
 @media (max-width: 500px) {
+  img.logobro{
+    min-width: 120px;
+  }
+
   .totals-item {
     justify-content: space-between !important;
   }
-
   .kolom {
     height: 300px;
   }
