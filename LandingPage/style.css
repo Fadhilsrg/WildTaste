@@ -909,6 +909,15 @@ a.logo {
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
+    img{
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      position: absolute;
+      filter: grayscale(100%);
+      -webkit-filter: grayscale(100%);
+    }
+
     &:before {
       content: "";
       position: absolute;
@@ -998,10 +1007,7 @@ a.logo {
   }
 }
 
-.item {
-  background-image: url(img/Cat.webp);
-  background-position: center;
-}
+
 
 /* ^^^^^^^^^^^^^^^^^^^^^^^^^^Testimonial^^^^^^^^^^^^^^^^^^^^^^ */
 .containerTestimonial {
@@ -1015,6 +1021,7 @@ a.logo {
   background: url(img/BackgroundTesti.svg);
   background-size: cover;
   background-position: center;
+  
 }
 
 .containerTestimonialText {

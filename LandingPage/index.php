@@ -279,8 +279,86 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
         </div>
         <div class="baris">
           <div class="kartu">
-            <div class="cover item">
-              <h1>Little<br />Bonsai</h1>
+            <div class="cover item tr-1">
+              <img src="/img/2.png" alt="">
+              <h1>Royal<br />Canin</h1>
+              <p class="price">Rp. 70.000</p>
+              <div class="card-back">
+                <a class="card-backBtn" href="#">Add to cart</a>
+                <a class="card-backBtn" href="#">View detail</a>
+              </div>
+            </div>
+          </div>
+          <div class="kartu">
+            <div class="cover item tr-2">
+              <img src="/img/3.png" alt="">
+              <h1>Pro<br />Plan</h1>
+              <p class="price">Rp. 85.000</p>
+              <div class="card-back">
+                <a class="card-backBtn" href="#">Add to cart</a>
+                <a class="card-backBtn" href="#">View detail</a>
+              </div>
+            </div>
+          </div>
+          <div class="kartu">
+            <div class="cover item tr-3">
+              <img src="/img/13.png" alt="">
+              <h1>Whiskas</h1>
+              <p class="price">Rp. 40.000</p>
+              <div class="card-back">
+                <a class="card-backBtn" href="#">Add to cart</a>
+                <a class="card-backBtn" href="#">View detail</a>
+              </div>
+            </div>
+          </div>
+          <div class="kartu">
+            <div class="cover item tr-4">
+              <img src="/img/14.png" alt="">
+              <h1>Cat<br />Choize</h1>
+              <p class="price">Rp. 25.000</p>
+              <div class="card-back">
+                <a class="card-backBtn" href="#">Add to cart</a>
+                <a class="card-backBtn" href="#">View detail</a>
+              </div>
+            </div>
+          </div>
+          <div class="kartu">
+            <div class="cover item tr-5">
+              <img src="/img/17.png" alt="">
+              <h1>Me-o</h1>
+              <p class="price">Rp. 15.000</p>
+              <div class="card-back">
+                <a class="card-backBtn" href="#">Add to cart</a>
+                <a class="card-backBtn" href="#">View detail</a>
+              </div>
+            </div>
+          </div>
+          <div class="kartu">
+            <div class="cover item tr-6">
+              <img src="/img/25.png" alt="">
+              <h1>Takari</h1>
+              <p class="price">Rp. 10.000</p>
+              <div class="card-back">
+                <a class="card-backBtn" href="#">Add to cart</a>
+                <a class="card-backBtn" href="#">View detail</a>
+              </div>
+            </div>
+          </div>
+          <div class="kartu">
+            <div class="cover item tr-7">
+              <img src="/img/26.png" alt="">
+              <h1>Sakura</h1>
+              <p class="price">Rp. 30.000</p>
+              <div class="card-back">
+                <a class="card-backBtn" href="#">Add to cart</a>
+                <a class="card-backBtn" href="#">View detail</a>
+              </div>
+            </div>
+          </div>
+          <div class="kartu">
+            <div class="cover item tr-8">
+              <img src="/img/27.png" alt="">
+              <h1>Vibra<br />Bites</h1>
               <p class="price">Rp. 20.000</p>
               <div class="card-back">
                 <a class="card-backBtn" href="#">Add to cart</a>
