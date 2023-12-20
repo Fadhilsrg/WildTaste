@@ -247,19 +247,19 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
           </p>
         </div>
         <div class="containerDiscoverContent">
-          <a href="">
+          <a href="discover/dog.html">
             <div class="content">
               <h2>Dog</h2>
               <p>Premium canine cuisine for indulgence.</p>
             </div>
           </a>
-          <a href="">
+          <a href="discover/cat.html">
             <div class="content">
               <h2>Cat</h2>
               <p>Premium Nutrition for Feline Wellness.</p>
             </div>
           </a>
-          <a href="">
+          <a href="discover/fish.html">
             <div class="content">
               <h2>Fish</h2>
               <p>Premium Fish Food for Thriving.</p>
