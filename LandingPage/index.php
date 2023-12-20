@@ -24,7 +24,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="/UasWeb/WildTaste/LandingPage/style.css" />
   </head>
   <body>
     <header id="nav-menu" aria-label="navigation bar">
@@ -107,9 +107,9 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
           </button>
           <div class="right-container">
             <a href="/UASWeb/WildTaste/logout.php">
-            <button id="logoutButton" class="btn logout">
-              <i class="bx bx-log-out" style="font-size: 1.2rem"></i>Logout
-            </button>
+              <button id="logoutButton" class="btn logout">
+                <i class="bx bx-log-out" style="font-size: 1.2rem"></i>Logout
+              </button>
             </a>
           </div>
         </div>
@@ -280,7 +280,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
         <div class="baris">
           <div class="kartu">
             <div class="cover item tr-1">
-              <img src="/img/2.png" alt="">
+              <img src="/UasWeb/WildTaste/img/2.png" alt="" />
               <h1>Royal<br />Canin</h1>
               <p class="price">Rp. 70.000</p>
               <div class="card-back">
@@ -291,7 +291,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
           </div>
           <div class="kartu">
             <div class="cover item tr-2">
-              <img src="/img/3.png" alt="">
+              <img src="/UasWeb/WildTaste/img/3.png" alt="" />
               <h1>Pro<br />Plan</h1>
               <p class="price">Rp. 85.000</p>
               <div class="card-back">
@@ -302,7 +302,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
           </div>
           <div class="kartu">
             <div class="cover item tr-3">
-              <img src="/img/13.png" alt="">
+              <img src="/UasWeb/WildTaste/img/13.png" alt="" />
               <h1>Whiskas</h1>
               <p class="price">Rp. 40.000</p>
               <div class="card-back">
@@ -313,7 +313,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
           </div>
           <div class="kartu">
             <div class="cover item tr-4">
-              <img src="/img/14.png" alt="">
+              <img src="/UasWeb/WildTaste/img/14.png" alt="" />
               <h1>Cat<br />Choize</h1>
               <p class="price">Rp. 25.000</p>
               <div class="card-back">
@@ -324,7 +324,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
           </div>
           <div class="kartu">
             <div class="cover item tr-5">
-              <img src="/img/17.png" alt="">
+              <img src="/UasWeb/WildTaste/img/17.png" alt="" />
               <h1>Me-o</h1>
               <p class="price">Rp. 15.000</p>
               <div class="card-back">
@@ -335,7 +335,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
           </div>
           <div class="kartu">
             <div class="cover item tr-6">
-              <img src="/img/25.png" alt="">
+              <img src="/UasWeb/WildTaste/img/25.png" alt="" />
               <h1>Takari</h1>
               <p class="price">Rp. 10.000</p>
               <div class="card-back">
@@ -346,7 +346,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
           </div>
           <div class="kartu">
             <div class="cover item tr-7">
-              <img src="/img/26.png" alt="">
+              <img src="/UasWeb/WildTaste/img/26.png" alt="" />
               <h1>Sakura</h1>
               <p class="price">Rp. 30.000</p>
               <div class="card-back">
@@ -357,7 +357,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
           </div>
           <div class="kartu">
             <div class="cover item tr-8">
-              <img src="/img/27.png" alt="">
+              <img src="/UasWeb/WildTaste/img/27.png" alt="" />
               <h1>Vibra<br />Bites</h1>
               <p class="price">Rp. 20.000</p>
               <div class="card-back">
@@ -380,7 +380,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
           </p>
         </div>
         <div class="containerTestimonialIsi">
-          <form id="testimonialForm">
+          <form id="testimonialForm" action="save_testimonial.php" method="post">
             <input
               name="name"
               type="text"
@@ -442,6 +442,33 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
                     </div>
                   </div>
                 </div>
+                <?php
+                require 'koneksi.php';
+
+                // Ambil data testimoni dari database
+                $sql = "SELECT * FROM testimonials";
+                $stmt = $conn->prepare($sql);
+                $stmt->execute();
+                $testimonials = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+                // Tutup koneksi database
+                $conn = null;
+                ?>
+                <!-- Bagian HTML untuk menampilkan testimoni -->
+                <div class="slide">
+                    <?php foreach ($testimonials as $testimonial) : ?>
+                        <div class="containerKartuTesti">
+                            <div class="cards">
+                                <div class="kartuTesti">
+                                    <h2 class="card-title"><?= $testimonial['name']; ?></h2>
+                                    <p class="date"><?= $testimonial['date']; ?></p>
+                                    <p class="description"><?= $testimonial['description']; ?></p>
+                                </div>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+
                 <!-- Slider Asli -->
                 <!-- Slide Biar Smooth -->
                 <div class="slide">
@@ -487,6 +514,20 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
                       </div>
                     </div>
                   </div>
+                </div>
+                <!-- Bagian HTML untuk menampilkan testimoni -->
+                <div class="slide">
+                    <?php foreach ($testimonials as $testimonial) : ?>
+                        <div class="containerKartuTesti">
+                            <div class="cards">
+                                <div class="kartuTesti">
+                                    <h2 class="card-title"><?= $testimonial['name']; ?></h2>
+                                    <p class="date"><?= $testimonial['date']; ?></p>
+                                    <p class="description"><?= $testimonial['description']; ?></p>
+                                </div>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
                 </div>
                 <!-- END DARI SLIDE SMOOTH -->
               </div>
@@ -608,6 +649,6 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
       crossorigin="anonymous"
     ></script>
     <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
-    <script src="app.js"></script>
+    <script src="/UasWeb/WildTaste/LandingPage/app.js"></script>
   </body>
 </html>

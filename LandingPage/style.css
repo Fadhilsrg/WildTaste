@@ -12,11 +12,6 @@
   --slide-count: 4;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-}
-
 *,
 *::before,
 *::after {
@@ -909,8 +904,8 @@ a.logo {
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
-    img{
-      height: 100%;
+    img {
+      height: 100% !important;
       width: 100%;
       object-fit: cover;
       position: absolute;
@@ -1007,8 +1002,6 @@ a.logo {
   }
 }
 
-
-
 /* ^^^^^^^^^^^^^^^^^^^^^^^^^^Testimonial^^^^^^^^^^^^^^^^^^^^^^ */
 .containerTestimonial {
   height: auto;
@@ -1021,7 +1014,6 @@ a.logo {
   background: url(img/BackgroundTesti.svg);
   background-size: cover;
   background-position: center;
-  
 }
 
 .containerTestimonialText {
@@ -1582,7 +1574,7 @@ input[type="submit"],
 }
 
 @media (max-width: 500px) {
-  img.logobro{
+  img.logobro {
     min-width: 120px;
   }
 
