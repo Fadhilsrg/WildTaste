@@ -6,12 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["username"]) && isset($
     $email = $_POST["email"];
     $password = $_POST["password"];
 
-    // Using PDO to connect to PostgreSQL
     try {
-        $conn = new PDO("pgsql:host=localhost;dbname=WildTaste", "postgres", "postgres");
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-        // Using prepared statement to prevent SQL injection
         $stmt = $conn->prepare("INSERT INTO tbl_user (username, email, password) VALUES (:username, :email, :password)");
         $stmt->bindParam(':username', $username);
         $stmt->bindParam(':email', $email);
@@ -24,6 +19,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["username"]) && isset($
         echo "Error: " . $e->getMessage();
     }
 } else {
-    echo "Invalid request.";
+    echo "Invalid request.";
 }
 ?>

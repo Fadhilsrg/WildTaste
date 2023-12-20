@@ -9,11 +9,9 @@ jQuery(function ($) {
 
       if ($animatable.offset().top + $animatable.height() - 50 < offset) {
         if (!$animatable.hasClass("animate-in")) {
-          $animatable
-            .css("top", $animatable.css("top"))
-            .addClass("animate-in");
+          $animatable.css("top", $animatable.css("top")).addClass("animate-in");
         }
-      } 
+      }
     });
   };
 
@@ -84,36 +82,34 @@ document.addEventListener("keydown", (e) => {
 
 hamburgerBtn.addEventListener("click", toggleHamburger);
 
-
 // Cart dan Pop up container
-document.getElementById('cartLink').addEventListener('click', function(event) {
+document.getElementById("cartLink").addEventListener("click", function (event) {
   event.preventDefault();
 
-  var cartIcon = document.getElementById('cartIcon');
-  if (cartIcon.className === 'bx bx-cart') {
-    cartIcon.className = 'bx bxs-cart';
+  var cartIcon = document.getElementById("cartIcon");
+  if (cartIcon.className === "bx bx-cart") {
+    cartIcon.className = "bx bxs-cart";
     showPopup();
   } else {
-    cartIcon.className = 'bx bx-cart';
+    cartIcon.className = "bx bx-cart";
     hidePopup();
   }
 });
 
-document.getElementById('closePopup').addEventListener('click', function() {
-  cartIcon.className = 'bx bx-cart';
+document.getElementById("closePopup").addEventListener("click", function () {
+  cartIcon.className = "bx bx-cart";
   hidePopup();
 });
 
 function showPopup() {
-  var cartSection = document.getElementById('cartSection');
-  cartSection.style.display = 'flex';
+  var cartSection = document.getElementById("cartSection");
+  cartSection.style.display = "flex";
 }
 
 function hidePopup() {
-  var cartSection = document.getElementById('cartSection');
-  cartSection.style.display = 'none';
+  var cartSection = document.getElementById("cartSection");
+  cartSection.style.display = "none";
 }
-
 
 // Show container
 document.addEventListener("DOMContentLoaded", function () {
@@ -123,17 +119,17 @@ document.addEventListener("DOMContentLoaded", function () {
   var textarea = form.querySelector("textarea");
   var showButton = document.getElementById("showBtn");
   var closeButton = document.getElementById("closeBtn");
-  var containerSubmit = document.getElementById("containerSubmit")
+  var containerSubmit = document.getElementById("containerSubmit");
   var containerShow = document.getElementById("containerShow");
   var containerClose = document.getElementById("containerClose");
 
   showButton.addEventListener("click", function () {
-      responseContainer.style.display = "flex";
-      input.style.display = "none";
-      textarea.style.display = "none";
-      containerSubmit.style.display = "none";
-      containerShow.style.display = "none";
-      containerClose.style.display = "flex";
+    responseContainer.style.display = "flex";
+    input.style.display = "none";
+    textarea.style.display = "none";
+    containerSubmit.style.display = "none";
+    containerShow.style.display = "none";
+    containerClose.style.display = "flex";
   });
 
   closeButton.addEventListener("click", function () {
@@ -146,7 +142,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// menghitung panjang slider agar animasi smooth 
+// menghitung panjang slider agar animasi smooth
 document.addEventListener("DOMContentLoaded", function () {
   // Menghitung jumlah slide asli
   var slideCount = document.querySelectorAll(".slide").length;
@@ -164,61 +160,72 @@ document.addEventListener("DOMContentLoaded", function () {
 
 /* Set rates + misc */
 var taxRate = 0.05;
-var shippingRate = 10000; 
+var shippingRate = 10000;
 var fadeTime = 300;
 
 /* Assign actions */
-$('.product-quantity input').change( function() {
+$(".product-quantity input").change(function () {
   updateQuantity(this);
 });
 
-$('.product-removal button').click( function() {
+$(".product-removal button").click(function () {
   removeItem(this);
 });
-
 
 /* Recalculate cart */
 function recalculateCart() {
   var subtotal = 0;
 
   /* Sum up row totals */
-  $('.product').each(function () {
-    subtotal += parseFloat($(this).find('.product-line-price').text().replace('Rp. ', '').replace('.', ''));
+  $(".product").each(function () {
+    subtotal += parseFloat(
+      $(this)
+        .find(".product-line-price")
+        .text()
+        .replace("Rp. ", "")
+        .replace(".", "")
+    );
   });
 
   /* Calculate totals */
   var tax = subtotal * taxRate;
-  var shipping = (subtotal > 0 ? shippingRate : 0);
+  var shipping = subtotal > 0 ? shippingRate : 0;
   var total = subtotal + tax + shipping;
 
   /* Update totals display */
-  $('.totals-value').fadeOut(fadeTime, function () {
-    $('#cart-subtotal').html(formatCurrency(subtotal));
-    $('#cart-tax').html(formatCurrency(tax));
-    $('#cart-shipping').html(formatCurrency(shipping));
-    $('#cart-total').html(formatCurrency(total));
+  $(".totals-value").fadeOut(fadeTime, function () {
+    $("#cart-subtotal").html(formatCurrency(subtotal));
+    $("#cart-tax").html(formatCurrency(tax));
+    $("#cart-shipping").html(formatCurrency(shipping));
+    $("#cart-total").html(formatCurrency(total));
     if (total == 0) {
-      $('.checkout').fadeOut(fadeTime);
+      $(".checkout").fadeOut(fadeTime);
     } else {
-      $('.checkout').fadeIn(fadeTime);
+      $(".checkout").fadeIn(fadeTime);
     }
-    $('.totals-value').fadeIn(fadeTime);
+    $(".totals-value").fadeIn(fadeTime);
   });
 }
 
 /* Helper function to format currency */
 function formatCurrency(amount) {
-  return 'Rp. ' + amount.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+  return "Rp. " + amount.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 }
 
 /* Update quantity */
 function updateQuantity(quantityInput) {
-  var productRow = $(quantityInput).closest('.product');
-  var price = parseFloat(productRow.find('.product-price').text().replace('Rp. ', '').replace('.', ''));
+  var productRow = $(quantityInput).closest(".product");
+  var price = parseFloat(
+    productRow
+      .find(".product-price")
+      .text()
+      .replace("Rp. ", "")
+      .replace(".", "")
+  );
   var quantity = parseInt($(quantityInput).val(), 10);
   var linePrice = price * quantity;
 
-  productRow.find('.product-line-price').fadeOut(fadeTime, function () {
+  productRow.find(".product-line-price").fadeOut(fadeTime, function () {
     $(this).text(formatCurrency(linePrice));
     recalculateCart();
     $(this).fadeIn(fadeTime);
@@ -226,12 +233,16 @@ function updateQuantity(quantityInput) {
 }
 
 /* Remove item from cart */
-function removeItem(removeButton)
-{
+function removeItem(removeButton) {
   /* Remove row from DOM and recalc cart total */
   var productRow = $(removeButton).parent().parent().parent();
-  productRow.slideUp(fadeTime, function() {
+  productRow.slideUp(fadeTime, function () {
     productRow.remove();
     recalculateCart();
   });
 }
+
+document.getElementById("logoutButton").addEventListener("click", function () {
+  // Redirect to logout.php when the logout button is clicked
+  window.location.href = "/UASWeb/WildTaste/login.html";
+});

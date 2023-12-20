@@ -1,3 +1,13 @@
+<?php
+session_start();
+
+if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
+    // Redirect user to login page if not logged in
+    header("Location: /UASWeb/WildTaste/login.html");
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -96,12 +106,12 @@
             </svg>
           </button>
           <div class="right-container">
-            <!-- POP UP CONTAINER ADA DI SECTION -->
-            <button class="btn">
+            <a href="/UASWeb/WildTaste/logout.php">
+            <button id="logoutButton" class="btn logout">
               <i class="bx bx-log-out" style="font-size: 1.2rem"></i>Logout
             </button>
+            </a>
           </div>
-
         </div>
       </div>
     </header>
@@ -315,7 +325,7 @@
                     <div class="cards">
                       <div class="kartuTesti">
                         <h2 class="card-title">Pele</h2>
-                        <p class="date">Desember 25, 2023</p>
+                        <p class="date">19:25, 25 Desember 2023</p>
                         <p class="description">Saikk keren abis</p>
                       </div>
                     </div>
@@ -326,7 +336,7 @@
                     <div class="cards">
                       <div class="kartuTesti">
                         <h2 class="card-title">Fadhil</h2>
-                        <p class="date">Desember 25, 2023</p>
+                        <p class="date">19:43, 25 Desember 2023</p>
                         <p class="description">Kelas Cuii Keren Abis</p>
                       </div>
                     </div>
@@ -337,7 +347,7 @@
                     <div class="cards">
                       <div class="kartuTesti">
                         <h2 class="card-title">Tabina</h2>
-                        <p class="date">Desember 25, 2023</p>
+                        <p class="date">21:14, 25 Desember 2023</p>
                         <p class="description">Mana Ada Jeleknya Please A :D</p>
                       </div>
                     </div>
@@ -348,7 +358,7 @@
                     <div class="cards">
                       <div class="kartuTesti">
                         <h2 class="card-title">Jabar</h2>
-                        <p class="date">Desember 25, 2023</p>
+                        <p class="date">22:25, 25 Desember 2023</p>
                         <p class="description">Emangnya Boleh Sekeren ini?</p>
                       </div>
                     </div>
@@ -361,7 +371,7 @@
                     <div class="cards">
                       <div class="kartuTesti">
                         <h2 class="card-title">Pele</h2>
-                        <p class="date">Desember 25, 2023</p>
+                        <p class="date">19:25, 25 Desember 2023</p>
                         <p class="description">Saikk keren abis</p>
                       </div>
                     </div>
@@ -372,7 +382,7 @@
                     <div class="cards">
                       <div class="kartuTesti">
                         <h2 class="card-title">Fadhil</h2>
-                        <p class="date">Desember 25, 2023</p>
+                        <p class="date">19:43, 25 Desember 2023</p>
                         <p class="description">Kelas Cuii Keren Abis</p>
                       </div>
                     </div>
@@ -383,7 +393,7 @@
                     <div class="cards">
                       <div class="kartuTesti">
                         <h2 class="card-title">Tabina</h2>
-                        <p class="date">Desember 25, 2023</p>
+                        <p class="date">21:14, 25 Desember 2023</p>
                         <p class="description">Mana Ada Jeleknya Please A :D</p>
                       </div>
                     </div>
@@ -394,7 +404,7 @@
                     <div class="cards">
                       <div class="kartuTesti">
                         <h2 class="card-title">Jabar</h2>
-                        <p class="date">Desember 25, 2023</p>
+                        <p class="date">22:25, 25 Desember 2023</p>
                         <p class="description">Emangnya Boleh Sekeren ini?</p>
                       </div>
                     </div>
@@ -445,7 +455,14 @@
           <div class="col-sm-12 col-md-6">
             <h6>About</h6>
             <p class="text-justify">
-              WildTaste adalah sebuah situs web yang didedikasikan untuk menghadirkan pengalaman kuliner unik seputar makanan binatang. Dengan fokus pada keanekaragaman rasa dan budaya, WildTaste mengajak pengunjungnya untuk menjelajahi dunia kuliner yang tak terduga dan menggugah selera. WildTaste bertujuan untuk menjadi sumber inspirasi bagi para pecinta makanan yang ingin merasakan sensasi kuliner yang liar dan autentik. Selamat menikmati petualangan kuliner di WildTaste!
+              WildTaste adalah sebuah situs web yang didedikasikan untuk
+              menghadirkan pengalaman kuliner unik seputar makanan binatang.
+              Dengan fokus pada keanekaragaman rasa dan budaya, WildTaste
+              mengajak pengunjungnya untuk menjelajahi dunia kuliner yang tak
+              terduga dan menggugah selera. WildTaste bertujuan untuk menjadi
+              sumber inspirasi bagi para pecinta makanan yang ingin merasakan
+              sensasi kuliner yang liar dan autentik. Selamat menikmati
+              petualangan kuliner di WildTaste!
             </p>
           </div>
 

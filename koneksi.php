@@ -1,16 +1,16 @@
 <?php
-$host = 'localhost';
-$port = '5432';
-$dbname = 'WildTaste';
-$user = 'postgres';
-$password = 'postgres';
+session_start();
 
-$dsn = "pgsql:host=$host;port=$port;dbname=$dbname;user=$user;password=$password";
+$host = "localhost";
+$dbname = "WildTaste";
+$username = "postgres";
+$password = "postgres";
 
 try {
-    $dbh = new PDO($dsn);
-    echo "Koneksi berhasil!";
+    $conn = new PDO("pgsql:host=$host;dbname=$dbname", $username, $password);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
-    echo "Koneksi gagal: " . $e->getMessage();
+    echo "Error: " . $e->getMessage();
+    exit;
 }
 ?>
