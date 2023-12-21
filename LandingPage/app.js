@@ -244,5 +244,5 @@ function removeItem(removeButton) {
 
 document.getElementById("logoutButton").addEventListener("click", function () {
   // Redirect to logout.php when the logout button is clicked
-  window.location.href = "/UASWeb/WildTaste/login.html";
+  window.location.href = "/WildTaste/login.html";
 });

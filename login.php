@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["username"]) && isset($
         if ($stmt->rowCount() > 0) {
             // Set session variable
             $_SESSION["loggedin"] = true;
-            header("Location: /UASWeb/WildTaste/LandingPage/index.php");
+            header("Location: /WildTaste/LandingPage/index.php");
         } else {
             echo "<center><h1>Email atau Password Salah. Silahkan Coba Kembali</h1>
                 <button><strong><a href='login.html'>Retry</a></strong></button></center>";

@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["username"]) && isset($
 
         $stmt->execute();
 
-        header("Location: login.html");
+        header("Location: /WildTaste/login.html");
     } catch (PDOException $e) {
         echo "Error: " . $e->getMessage();
     }

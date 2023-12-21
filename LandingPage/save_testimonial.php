@@ -50,5 +50,5 @@ if ($containsProfanity) {
 $conn = null;
 
 // Mengirimkan response ke halaman utama (index.php) menggunakan JavaScript
-echo "<script>alert('$response'); window.location.href='/UasWeb/WildTaste/LandingPage/index.php#Testi';</script>";
+echo "<script>alert('$response'); window.location.href='/WildTaste/LandingPage/index.php#Testi';</script>";
 ?>

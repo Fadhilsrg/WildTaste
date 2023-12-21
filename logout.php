@@ -5,6 +5,6 @@ $_SESSION = array();
 
 session_destroy();
 
-header("Location: /UASWeb/WildTaste/login.html");
+header("Location: /WildTaste/login.html");
 exit();
 ?>
