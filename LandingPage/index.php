@@ -455,8 +455,8 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
                 $conn = null;
                 ?>
                 <!-- Bagian HTML untuk menampilkan testimoni -->
+                <?php foreach ($testimonials as $testimonial) : ?>
                 <div class="slide">
-                    <?php foreach ($testimonials as $testimonial) : ?>
                         <div class="containerKartuTesti">
                             <div class="cards">
                                 <div class="kartuTesti">
@@ -466,8 +466,8 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
                                 </div>
                             </div>
                         </div>
-                    <?php endforeach; ?>
-                </div>
+                      </div>
+                      <?php endforeach; ?>
 
                 <!-- Slider Asli -->
                 <!-- Slide Biar Smooth -->
@@ -516,8 +516,8 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
                   </div>
                 </div>
                 <!-- Bagian HTML untuk menampilkan testimoni -->
+                <?php foreach ($testimonials as $testimonial) : ?>
                 <div class="slide">
-                    <?php foreach ($testimonials as $testimonial) : ?>
                         <div class="containerKartuTesti">
                             <div class="cards">
                                 <div class="kartuTesti">
@@ -527,8 +527,8 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
                                 </div>
                             </div>
                         </div>
-                    <?php endforeach; ?>
-                </div>
+                      </div>
+                      <?php endforeach; ?>
                 <!-- END DARI SLIDE SMOOTH -->
               </div>
             </div>
