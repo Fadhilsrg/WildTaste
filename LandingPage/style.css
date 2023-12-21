@@ -384,6 +384,10 @@ a.logo {
   min-width: 480px;
 }
 
+.logoutList {
+  display: none;
+}
+
 .menu-bar .nav-link {
   font-size: 1.2rem;
   font-weight: 500;
@@ -1352,6 +1356,10 @@ input[type="submit"],
 
   .nav-end {
     justify-content: end;
+  }
+
+  .logoutList {
+    display: block;
   }
 
   .site-footer {

@@ -61,13 +61,13 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
               <div id="dropdown2" class="dropdown">
                 <ul role="menu">
                   <li role="menuitem">
-                    <a class="dropdown-link" href="#Dog">Dog</a>
+                    <a class="dropdown-link" href="discover/dog.html">Dog</a>
                   </li>
                   <li role="menuitem">
-                    <a class="dropdown-link" href="#Cat">Cat</a>
+                    <a class="dropdown-link" href="discover/cat.html">Cat</a>
                   </li>
                   <li role="menuitem">
-                    <a class="dropdown-link" href="#Fish">Fish</a>
+                    <a class="dropdown-link" href="discover/fish.html">Fish</a>
                   </li>
                 </ul>
               </div>
@@ -80,6 +80,13 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
             </li>
             <li class="animatable fadeInUp animate-in animationDelayLongLong">
               <a class="nav-link" href="#footer">About</a>
+            </li>
+            <li class="logoutList animatable fadeInUp animate-in animationDelayLongLong">
+              <a href="/UASWeb/WildTaste/logout.php">
+                <button id="logoutButton" class="btn logout list">
+                  <i class="bx bx-log-out" style="font-size: 1.2rem"></i>Logout
+                </button>
+              </a>
             </li>
           </ul>
         </nav>
