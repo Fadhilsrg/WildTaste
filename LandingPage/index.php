@@ -6,6 +6,27 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     header("Location: /WildTaste/login.html");
     exit;
 }
+
+// Validasi dan bersihkan input pengguna
+function sanitizeInput($input)
+{
+    return filter_var($input, FILTER_SANITIZE_STRING);
+}
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = sanitizeInput($_POST['name']);
+    $testimony = sanitizeInput($_POST['testimony']);
+
+    // Simpan testimoni ke database (gunakan prepared statements)
+    require 'koneksi.php';
+    $sql = "INSERT INTO testimonials (name, description, date) VALUES (:name, :testimony, NOW())";
+    $stmt = $conn->prepare($sql);
+    $stmt->bindParam(':name', $name, PDO::PARAM_STR);
+    $stmt->bindParam(':testimony', $testimony, PDO::PARAM_STR);
+    $stmt->execute();
+    $conn = null;
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -464,17 +485,17 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
                 <!-- Bagian HTML untuk menampilkan testimoni -->
                 <?php foreach ($testimonials as $testimonial) : ?>
                 <div class="slide">
-                        <div class="containerKartuTesti">
-                            <div class="cards">
-                                <div class="kartuTesti">
-                                    <h2 class="card-title"><?= $testimonial['name']; ?></h2>
-                                    <p class="date"><?= $testimonial['date']; ?></p>
-                                    <p class="description"><?= $testimonial['description']; ?></p>
-                                </div>
-                            </div>
-                        </div>
-                      </div>
-                      <?php endforeach; ?>
+                 <div class="containerKartuTesti">
+                  <div class="cards">
+                   <div class="kartuTesti">
+                    <h2 class="card-title"><?= $testimonial['name']; ?></h2>
+                    <p class="date"><?= $testimonial['date']; ?></p>
+                    <p class="description"><?= $testimonial['description']; ?></p>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+                <?php endforeach; ?>
 
                 <!-- Slider Asli -->
                 <!-- Slide Biar Smooth -->
