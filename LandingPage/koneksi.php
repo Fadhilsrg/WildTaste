@@ -2,11 +2,12 @@
 
 $host = "localhost";
 $dbname = "WildTaste";
-$username = "postgres";
-$password = "postgres";
+$username = "root";  // Ganti dengan nama pengguna MySQL Anda
+$password = "";      // Ganti dengan kata sandi MySQL Anda
 
 try {
-    $conn = new PDO("pgsql:host=$host;dbname=$dbname", $username, $password);
+    // Menggunakan PDO MySQL
+    $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
     echo "Error: " . $e->getMessage();
